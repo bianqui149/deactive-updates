@@ -36,8 +36,12 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'DISABLE_UPDATE',plugin_dir_path( __FILE__ ));
 
-require_once plugin_dir_path( __FILE__ ) . '/admin/class-disable-updates-wp-admin.php';
-require_once plugin_dir_path( __FILE__ ) . '/admin/class-disable-page-admin.php';
+
+require_once DISABLE_UPDATE . '/admin/class-disable-updates-wp-admin.php';
+require_once DISABLE_UPDATE . '/admin/class-disable-page-admin.php';
+require_once DISABLE_UPDATE . '/admin/class-links-plugin.php';
+$links = new Menu_Links( __FILE__ );
 
 
